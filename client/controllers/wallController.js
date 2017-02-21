@@ -10,9 +10,9 @@ app.controller('WallController', function (WallFactory, $scope){
       $scope.posts = posts;
     });
   }
-  $scope.submitComment = function(postID, index){
-    console.log("comment = ", $scope.newComment);
-    WallFactory.submitComment(postID, $scope.newComment, $scope.user.name, function(posts){
+  $scope.submitComment = function(postID, newComment){
+    console.log("comment = ", newComment);
+    WallFactory.submitComment(postID, newComment, $scope.user.name, function(posts){
       $scope.posts = posts;
     });
   }
