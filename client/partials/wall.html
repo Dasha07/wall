@@ -1,21 +1,24 @@
 <h1>Full MEAN Wall</h1>
 Welcome {{user.name}}! <button ng-click="signOut()">Sign Out </button>
 <br>
+{{test}}<br>
+<input type=text ng-model=test><br>
+<input type=text ng-model=test>
 <br>
 <br>
-Post a message:<br>
-<input type=textare col=300 row=5 ng-model="message">
+Post a message:{{message}}<br>
+<textarea cols=150 rows=5 ng-model="message"></textarea><br>
 <button ng-click="submitPost()">Post a Message</button>
 <br>
 <br>
 <div ng-repeat='post in posts'>
-  {{post.user.name}} - {{post.created_at}}:<br>
-  {{post.message}}
+  {{post.user}} - {{post.createdAt | date: "short"}}<br>
+  {{post.message}}<br><br>
   <div ng-repeat='comment in post.comments'>
-    {{comment.user.name}} - {{comment.created_at}}:<br>
-    {{comment.message}}
+    {{comment.user}} - {{comment.createdAt | date: "short"}}<br>
+    {{comment.message}}<br><br>
   </div>
-  Post a Comment:<br>
-  <input type=textare col=300 row=5 ng-model="comment">
-  <button ng-click="submitComment(post)">Post a Comment</button>
-</div>
+  Post a Comment:{{newComment}}<br>
+  <textarea cols=150 rows=5 ng-model="newComment"></textarea><br>
+  <button ng-click="submitComment(post._id, $index)">Post a Comment</button>
+</div><br><br>
