@@ -1,0 +1,16 @@
+<html ng-app='{{template}}'>
+<head>
+  <meta charset='utf-8'>
+  <title>{{template}}</title>
+  <script src="angular/angular.js"></script>
+  <script src="angular-route/angular-route.js"></script>
+  <script src="config.js"></script>
+  <script src="factories/{{template}}.js"></script>
+  <script src="controllers/{{template}}.js"></script>
+</head>
+<body>
+  <h1><a href='#!'>Home</a></h1>
+  <div ng-view="">
+  </div>
+</body>
+</html>
