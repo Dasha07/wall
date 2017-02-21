@@ -1,6 +1,9 @@
-var {{template}}Controller = require('../controllers/{{template}}');
+var WallController = require('../controllers/wall.js');
 module.exports = function(app){
-  app.get('/{{template}}', function(req,res){
-    {{template}}Controller.showAll(req,res);
+  app.get('/posts', function(req,res){
+    WallController.show(req,res);
+  });
+  app.post('/login', function(req, res){
+    WallController.getUser(req,res);
   });
 }
